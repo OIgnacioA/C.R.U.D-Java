@@ -17,6 +17,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
    EntidadesBL Formulario = new EntidadesBL();  
   
    String Path = ""; 
+   String Dir = "";
    DefaultTableModel modelo; 
    String Busqueda = "SELECT * FROM Entidades_BD"; 
    Integer Cant = 0; 
@@ -44,7 +45,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
          JCombo_Categorias.setEnabled(false);
           jPanel3.setBackground(Color.GRAY);
          setLocationRelativeTo(null);
-         JT_BaseDeDatos.setEnabled(false);
+         
         
     
          setLocationRelativeTo(null);
@@ -103,8 +104,6 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
         JB_Buscar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        JT_BaseDeDatos = new javax.swing.JTextField();
-        JT_EditaBD = new javax.swing.JToggleButton();
         jLabel17 = new javax.swing.JLabel();
         jB_Formulario3_ = new javax.swing.JButton();
         Seleccion_Ar = new javax.swing.JButton();
@@ -433,20 +432,6 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
             }
         });
 
-        JT_BaseDeDatos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JT_BaseDeDatosActionPerformed(evt);
-            }
-        });
-
-        JT_EditaBD.setFont(new java.awt.Font("Consolas", 0, 11)); // NOI18N
-        JT_EditaBD.setText("Edit DB");
-        JT_EditaBD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JT_EditaBDActionPerformed(evt);
-            }
-        });
-
         jB_Formulario3_.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         jB_Formulario3_.setText("Formulario de Usuario");
         jB_Formulario3_.addActionListener(new java.awt.event.ActionListener() {
@@ -455,7 +440,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
             }
         });
 
-        Seleccion_Ar.setText("Seleccion de Archivo");
+        Seleccion_Ar.setText("Seleccion de DB");
         Seleccion_Ar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Seleccion_ArActionPerformed(evt);
@@ -472,13 +457,10 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel17))
-                            .addComponent(Seleccion_Ar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
                         .addComponent(JB_Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(76, 76, 76)
                         .addComponent(jB_Formulario3_)
@@ -497,27 +479,24 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
                                 .addComponent(jLabel1)
-                                .addGap(115, 115, 115)
-                                .addComponent(JT_EditaBD, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(205, 205, 205)))
+                        .addGap(36, 36, 36)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JT_BaseDeDatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(JText_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(JText_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Seleccion_Ar))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JT_BaseDeDatos)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(JT_EditaBD)
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel1)
+                    .addComponent(Seleccion_Ar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(JCombo_Filtro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -531,12 +510,9 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
                     .addComponent(JB_Impresion2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JB_Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jB_Formulario3_)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Seleccion_Ar)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel17)
+                        .addComponent(jLabel16)))
                 .addContainerGap())
         );
 
@@ -677,7 +653,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
          
       try {
           
-            Dattos = "jdbc:sqlite:" + JT_BaseDeDatos.getText();
+            Dattos = "jdbc:sqlite:" + Path; //JT_BaseDeDatos.getText();
           
             conexion objConexion1 = new conexion(Dattos);
         
@@ -768,7 +744,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
 
     
         
-       Dattos = "jdbc:sqlite:" + JT_BaseDeDatos.getText();
+       Dattos = "jdbc:sqlite:" + Path; //JT_BaseDeDatos.getText();
         
         conexion objConexion = new conexion(Dattos);
        
@@ -795,7 +771,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
 
     private void JB_BorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_BorrarActionPerformed
 
-        Dattos = "jdbc:sqlite:" + JT_BaseDeDatos.getText();
+        Dattos = "jdbc:sqlite:" + Path;   // JT_BaseDeDatos.getText();
         
         
         conexion objConexion = new conexion(Dattos);
@@ -817,7 +793,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
     
     private void JB_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_AgregarActionPerformed
         
-        Dattos = "jdbc:sqlite:" + JT_BaseDeDatos.getText();
+        Dattos = "jdbc:sqlite:" + Path; //JT_BaseDeDatos.getText();
         
         int AIDI = 0;  
         
@@ -890,7 +866,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
 
          if (Prueba == false ){ 
 
-                Dattos = "jdbc:sqlite:" + JT_BaseDeDatos.getText();
+                Dattos = "jdbc:sqlite:" + Path;  //JT_BaseDeDatos.getText();
                 conexion objConexion2 = new conexion(Dattos);
 
                 String srtSentenciaInsert = String.format("insert into Entidades_BD (id, Entidad, Localidad,Decreto, Categoria_L15192, Ultima_Actualizacion, InscripcionDGPJ2, Telefono,N_Registro_Municipal)"
@@ -963,7 +939,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
   
     private void JB_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_BuscarActionPerformed
         
-         Dattos = "jdbc:sqlite:" + JT_BaseDeDatos.getText();
+         Dattos = "jdbc:sqlite:" + Path; //JT_BaseDeDatos.getText();
          
        //---  
         String Data2 =  JText_Busqueda.getText(); 
@@ -1029,7 +1005,7 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
           
     //---toma desde TextFields ;
             
-    Formulario.setBasededatos("jdbc:sqlite:" +JT_BaseDeDatos.getText());  
+    Formulario.setBasededatos("jdbc:sqlite:" + Path );//JT_BaseDeDatos.getText());  
 
    
     JText_Busqueda.requestFocus(); //poner el foco en este Jtext.
@@ -1045,25 +1021,6 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_FImpresionActionPerformed
 
     
-    private void JT_BaseDeDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JT_BaseDeDatosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JT_BaseDeDatosActionPerformed
-
-    private void JT_EditaBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JT_EditaBDActionPerformed
-      
-        if(JT_EditaBD.isSelected()) {
-        
-         JT_BaseDeDatos.setEnabled(true);
-         JT_EditaBD.setBackground(Color.RED);
-        }else{
-         JT_BaseDeDatos.setEnabled(false);
-         JT_EditaBD.setBackground(Color.GRAY);
-
-        }       
-    
-        
-    }//GEN-LAST:event_JT_EditaBDActionPerformed
-
     private void jToogle_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToogle_1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToogle_1ActionPerformed
@@ -1084,11 +1041,8 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
 
     private void JText_BusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JText_BusquedaActionPerformed
       
-      
+         JB_BuscarActionPerformed(evt);
 
-                        JB_BuscarActionPerformed(evt);
-
-              
     }//GEN-LAST:event_JText_BusquedaActionPerformed
 
     private void JCombo_FiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCombo_FiltroActionPerformed
@@ -1097,11 +1051,9 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
 
     private void jB_Formulario3_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Formulario3_ActionPerformed
     
-       String DB= JT_BaseDeDatos.getText();
+       String DB= Path; //JT_BaseDeDatos.getText();
         
         Tablas Formulario3Setting = new Tablas(); 
-        
-        
         
         Formulario3Setting.setDataBase(DB);
         
@@ -1111,17 +1063,18 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
 
     private void Seleccion_ArActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Seleccion_ArActionPerformed
         
-        
+       Dir = javax.swing.filechooser.FileSystemView.getFileSystemView().getHomeDirectory().toString();
+       
         File archivoSeleccionado;
         
         JFileChooser seleccionarArchivo = new JFileChooser();
+        seleccionarArchivo.setCurrentDirectory(new File(Dir + "\\"));
         seleccionarArchivo.showOpenDialog(null);
         archivoSeleccionado = seleccionarArchivo.getSelectedFile();
         Path = archivoSeleccionado.getAbsoluteFile().toString();
         
+        JB_BuscarActionPerformed(evt);
         
-        //System.out.println("---- Path to string" + Path);
-       
     }//GEN-LAST:event_Seleccion_ArActionPerformed
 
     
@@ -1258,8 +1211,6 @@ public class FrM_Entidades2 extends javax.swing.JFrame {
     private javax.swing.JButton JB_Impresion2;
     private javax.swing.JComboBox<String> JCombo_Categorias;
     private javax.swing.JComboBox<String> JCombo_Filtro;
-    private javax.swing.JTextField JT_BaseDeDatos;
-    private javax.swing.JToggleButton JT_EditaBD;
     private javax.swing.JTextField JText_Busqueda;
     private javax.swing.JTextField JText_Cantidad;
     private javax.swing.JButton Seleccion_Ar;
